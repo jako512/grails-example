@@ -1,4 +1,7 @@
-
-/target
-/.grails
-*.log
+/target*
+/cobertura.ser
+/README.html
+classes
+/plugins
+/.*
+/*.log*
