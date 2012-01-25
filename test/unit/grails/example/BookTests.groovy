@@ -35,6 +35,7 @@ class BookTests {
 
     void 'test named query with valid param followed by query with null param'() {
     	assert Book.ofYear(2012).ofYear(null).list() == []
+        // throws NullPointerException
     }
 
 }
