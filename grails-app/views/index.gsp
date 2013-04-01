@@ -117,6 +117,14 @@
 					</g:each>
 				</ul>
 			</div>
+			<div id="test">
+				<div>&lt;r:img uri="/image/springsource.png" /&gt;<br/><r:img uri="/images/springsource.png"/></div>
+				<div>&lt;img src="/image/springsource.png" /&gt;<br/><img src="/images/springsource.png"/></div>
+				<div class="r1">/css/test1.css -&gt; ../image/springsource.png</div>
+				<div class="a1">/css/test1.css -&gt; /image/springsource.png</div>
+				<div class="r2">/css/test/test2.css -&gt; ../../image/springsource.png</div>
+				<div class="a2">/css/test/test2.css -&gt; /image/springsource.png</div>
+			</div>
 		</div>
 	</body>
 </html>

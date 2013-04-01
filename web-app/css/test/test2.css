@@ -1,0 +1,9 @@
+#test div.r2 {
+	background-image: url(../../images/springsource.png);
+}
+
+#test div.a2 {
+	background-image: url(/images/springsource.png);
+}
+
+

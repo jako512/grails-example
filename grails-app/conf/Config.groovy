@@ -73,9 +73,21 @@ environments {
 log4j = {
     // Example of changing the log pattern for the default console appender:
     //
-    //appenders {
+    appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+		rollingFile(
+			name:'rollingFile',
+			file:'app.log',
+			maxFileSize:'400KB',
+			maxBackupIndex:9,
+			layout:pattern(conversionPattern: '%d{yyyy-MM-dd HH:mm:ss} %-5p %-20.20c{1} - #%X{#}: %m\n')
+		)
+    }
+
+	root {
+		info 'rollingFile', 'stdout'
+	}
+
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -88,4 +100,14 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+	debug 'grails.app.resourceMappers',
+	      'org.grails.plugin.resource'
+
 }
+
+
+grails.app.context = '/'
+grails.resources.mappers.baseurl.enabled = true
+//grails.resources.mappers.baseurl.default = "http://localhost:8080/grails-example/static"
+grails.resources.mappers.baseurl.default = "http://localhost:8080/static"
